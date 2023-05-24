@@ -44,7 +44,7 @@ typedef struct instruction_s
  * struct sub_s - variables -args, file, line content
  * @file: pointer to monty file
  * @arg: value
- * @flag: flag change stack <-> queue
+ * @lifi: flag change stack <-> queue
  * @lncont: line content
  * Description: it carries the variables
  */
@@ -53,7 +53,7 @@ typedef struct sub_s
 	char *arg;
 	FILE *file;
 	char *lncont;
-	int flag;
+	int lifi;
 }  sub_t;
 extern sub_t sub;
 
@@ -80,6 +80,6 @@ void r_rotl(stack_t **head, unsigned int line_counter);
 void r_rotr(stack_t **head, __attribute__((unused)) unsigned int line_counter);
 void addnod(stack_t **head, int n);
 void addque(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int line_counter);
-void f_stack(stack_t **head, unsigned int line_counter);
+void r_queue(stack_t **head, unsigned int line_counter);
+void r_stack(stack_t **head, unsigned int line_counter);
 #endif
