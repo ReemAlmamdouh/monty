@@ -67,7 +67,7 @@ void r_add(stack_t **head, unsigned int line_counter);
 void r_nop(stack_t **head, unsigned int line_counter);
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *lncont);
+char *clean_line(char *lncont);
 void r_push(stack_t **head, unsigned int number);
 void r_pall(stack_t **head, unsigned int number);
 void r_sub(stack_t **head, unsigned int line_counter);
