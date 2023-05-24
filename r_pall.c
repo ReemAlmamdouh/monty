@@ -1,14 +1,14 @@
 #include "monty.h"
 /**
- * r_pall - prints the stack
+ * f_pall - prints the stack
  * @head: stack head
- * @line_counter: not used
+ * @counter: no used
  * Return: no return
 */
-void r_pall(stack_t **head, unsigned int line_counter)
+void f_pall(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
-	(void)line_counter;
+	(void)counter;
 
 	h = *head;
 	if (h == NULL)
