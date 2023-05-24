@@ -58,11 +58,6 @@ typedef struct sub_s
 extern sub_t sub;
 
 /* prototypes of functions */
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *lncont);
-void r_push(stack_t **head, unsigned int number);
-void r_pall(stack_t **head, unsigned int number);
 void r_pint(stack_t **head, unsigned int number);
 int execute(char *lncont, stack_t **head, unsigned int line_counter, FILE *file);
 void free_stack(stack_t *head);
@@ -70,6 +65,11 @@ void r_pop(stack_t **head, unsigned int line_counter);
 void r_swap(stack_t **head, unsigned int line_counter);
 void r_add(stack_t **head, unsigned int line_counter);
 void r_nop(stack_t **head, unsigned int line_counter);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *lncont);
+void r_push(stack_t **head, unsigned int number);
+void r_pall(stack_t **head, unsigned int number);
 void r_sub(stack_t **head, unsigned int line_counter);
 void r_div(stack_t **head, unsigned int line_counter);
 void r_mul(stack_t **head, unsigned int line_counter);
