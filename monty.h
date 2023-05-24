@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define _GNU_SOURCE
 /* libraries */
 #include <stdlib.h>
 #include <stdio.h>
