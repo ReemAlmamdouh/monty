@@ -82,7 +82,5 @@ void r_rotr(stack_t **head, __attribute__((unused)) unsigned int line_counter);
 void addnod(stack_t **head, int n);
 void addque(stack_t **head, int n);
 void r_queue(stack_t **head, unsigned int line_counter);
-stack_t *add_node(stack_t **stack, const int n);
-int is_number(char *str);
 void r_stack(stack_t **head, unsigned int line_counter);
 #endif
