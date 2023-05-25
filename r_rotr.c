@@ -2,10 +2,10 @@
 /**
   *r_rotr- function that rotates stack
   *@head: stack head
-  *@line_counter: line_number
+  *@line_number: line number
   *Return: no return
  */
-void r_rotr(stack_t **head, __attribute__((unused)) unsigned int line_counter)
+void r_rotr(stack_t **head, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *copy;
 

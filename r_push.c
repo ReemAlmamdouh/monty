@@ -2,10 +2,10 @@
 /**
  * r_push - function that adds node to the stack
  * @head: stack head
- * @line_counter: line_number
+ * @line_number: line number
  * Return: no return
 */
-void r_push(stack_t **head, unsigned int line_counter)
+void r_push(stack_t **head, unsigned int line_number)
 {
         int n, f = 0, glab = 0;
 
@@ -18,13 +18,13 @@ void r_push(stack_t **head, unsigned int line_counter)
                         if (sub.arg[f] > 57 || sub.arg[f] < 48)
                                 glab = 1; }
                 if (glab == 1)
-                { fprintf(stderr, "L%d: usage: push integer\n", line_counter);
+                { fprintf(stderr, "L%d: usage: push integer\n", line_number);
                         fclose(sub.file);
                         free(sub.lncont);
                         free_stack(*head);
                         exit(EXIT_FAILURE); }}
         else
-        { fprintf(stderr, "L%d: usage: push integer\n", line_counter);
+        { fprintf(stderr, "L%d: usage: push integer\n", line_number);
                 fclose(sub.file);
                 free(sub.lncont);
                 free_stack(*head);

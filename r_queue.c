@@ -2,13 +2,13 @@
 /**
  * r_queue - prints the top
  * @head: stack head
- * @line_counter: line_number
+ * @line_number: line number
  * Return: no return
 */
-void r_queue(stack_t **head, unsigned int line_counter)
+void r_queue(stack_t **head, unsigned int line_number)
 {
 	(void)head;
-	(void)line_counter;
+	(void)line_number;
 	sub.lifi = 1;
 }
 

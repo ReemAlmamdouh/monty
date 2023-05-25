@@ -2,13 +2,13 @@
 /**
  * r_pstr - prints string
  * @head: stack head
- * @line_counter: line_number
+ * @line_number: line number
  * Return: no return
 */
-void r_pstr(stack_t **head, unsigned int line_counter)
+void r_pstr(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
-	(void)line_counter;
+	(void)line_number;
 
 	h = *head;
 	while (h)

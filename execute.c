@@ -2,12 +2,12 @@
 /**
 * execute - function that executes  opcode
 * @stack: head stack
-* @line_counter: line_counter
+* @line_number: line number
 * @file: poiner
 * @lncont: line content
 * Return: no return
 */
-int execute(char *lncont, stack_t **stack, unsigned int line_counter, FILE *file)
+int execute(char *lncont, stack_t **stack, unsigned int line_number, FILE *file)
 {
 	instruction_t opst[] = {
 				{"push", r_push}, {"pall", r_pall}, {"pint", r_pint},
@@ -37,13 +37,13 @@ int execute(char *lncont, stack_t **stack, unsigned int line_counter, FILE *file
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, line_counter);
+		{	opst[i].f(stack, line_number);
 			return (0);
 		}
 		i++;
 	}
 	if (op && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", line_counter, op);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
 		fclose(file);
 		free(lncont);
 		free_stack(*stack);

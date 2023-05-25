@@ -2,10 +2,10 @@
 /**
  * r_mul - multiplies top 2 elements
  * @head: stack head
- * @line_counter: line_number
+ * @line_number: line number
  * Return: no return
 */
-void r_mul(stack_t **head, unsigned int line_counter)
+void r_mul(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -18,7 +18,7 @@ void r_mul(stack_t **head, unsigned int line_counter)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", line_counter);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		fclose(sub.file);
 		free(sub.lncont);
 		free_stack(*head);

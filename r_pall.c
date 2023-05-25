@@ -2,13 +2,13 @@
 /**
  * r_pall - prints the stack
  * @head: stack head
- * @line_counter: not used
+ * @line_number: not used
  * Return: no return
 */
-void r_pall(stack_t **head, unsigned int line_counter)
+void r_pall(stack_t **head, unsigned int line_number)
 {
         stack_t *h;
-        (void)line_counter;
+        (void)line_number;
 
         h = *head;
         if (h == NULL)

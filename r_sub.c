@@ -2,10 +2,10 @@
 /**
   *r_sub- sustration
   *@head: stack head
-  *@line_counter: line_number
+  *@line_number: line number
   *Return: no return
  */
-void r_sub(stack_t **head, unsigned int line_counter)
+void r_sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux;
 	int sus, nodes;
@@ -15,7 +15,7 @@ void r_sub(stack_t **head, unsigned int line_counter)
 		aux = aux->next;
 	if (nodes < 2)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_counter);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		fclose(sub.file);
 		free(sub.lncont);
 		free_stack(*head);
@@ -26,4 +26,4 @@ void r_sub(stack_t **head, unsigned int line_counter)
 	aux->next->n = sus;
 	*head = aux->next;
 	free(aux);
-}
+i}
