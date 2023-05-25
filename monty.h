@@ -1,15 +1,14 @@
 #ifndef MONTY_H
 #define MONTY_H
-#define USE_GETLINE 0
+
 
 /* libraries */
 #include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include <ctype.h>
 
 /**
@@ -42,12 +41,12 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
- * struct sub_s - variables -args, file, line content
- * @file: pointer to monty file
+ * struct sub_s - variables -args, file, lncont
+ * @file: pointer
  * @arg: value
- * @lifi: flag change stack <-> queue
+ * @lifi: change stack
  * @lncont: line content
- * Description: it carries the variables
+ * description: carries variables
  */
 typedef struct sub_s
 {
