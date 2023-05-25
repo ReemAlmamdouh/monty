@@ -1,38 +1,55 @@
 #include "monty.h"
-/**
- * r_push - function that adds node to the stack
- * @head: stack head
- * @line_counter: line_number
- * Return: no return
-*/
-void r_push(stack_t **head, unsigned int line_counter)
-{
-        int n, f = 0, glab = 0;
 
-        if (sub.arg)
-        {
-                if (sub.arg[0] == '-')
-                        f++;
-                for (; sub.arg[f] != '\0'; f++)
-                {
-                        if (sub.arg[f] > 57 || sub.arg[f] < 48)
-                                glab = 1; }
-                if (glab == 1)
-                { fprintf(stderr, "L%d: usage: push integer\n", line_counter);
-                        fclose(sub.file);
-                        free(sub.lncont);
-                        free_stack(*head);
-                        exit(EXIT_FAILURE); }}
-        else
-        { fprintf(stderr, "L%d: usage: push integer\n", line_counter);
-                fclose(sub.file);
-                free(sub.lncont);
-                free_stack(*head);
-                exit(EXIT_FAILURE); }
-        n = atoi(sub.arg);
-        if (sub.lifi == 0)
-                addnod(head, n);
-        else
-                addque(head, n);
+/**
+ * r_push - pushes an element onto the stack
+ * @stack: pointer to the top of the stack
+ * @line_counter: current line number of the opcode in the Monty file
+ */
+void r_push(stack_t **stack, unsigned int line_counter)
+{
+	int n;
+
+	if (sub.arg == NULL || !is_number(sub.arg))
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_counter);
+		free_stack(*stack);
+		fclose(sub.file);
+		free(sub.line);
+		exit(EXIT_FAILURE);
+	}
+
+	n = atoi(sub.arg);
+	if (add_node(stack, n) == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free_stack(*stack);
+		fclose(sub.file);
+		free(sub.line);
+		exit(EXIT_FAILURE);
+	}
 }
 
+/**
+ * is_number - checks if a string is a number
+ * @str: string to check
+ *
+ * Return: 1 if string is a number, 0 otherwise
+ */
+int is_number(char *str)
+{
+	if (str == NULL || *str == '\0')
+		return (0);
+
+	if (*str == '-' || *str == '+')
+		str++;
+
+	while (*str != '\0')
+	{
+		if (*str < '0' || *str > '9')
+			return (0);
+
+		str++;
+	}
+
+	return (1);
+}
