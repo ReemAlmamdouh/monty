@@ -59,6 +59,7 @@ typedef struct sub_s
 extern sub_t sub;
 
 /* prototypes of functions */
+
 void r_pint(stack_t **head, unsigned int number);
 int execute(char *lncont, stack_t **head, unsigned int line_counter, FILE *file);
 void free_stack(stack_t *head);
